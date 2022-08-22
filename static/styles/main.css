@@ -3,3 +3,13 @@ body{
     background-color: rgb(255, 247, 247);
 }
 
+.alert_direction{
+    width:31% ;
+    margin-left: 36%;
+    margin-top: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
