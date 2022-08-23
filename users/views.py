@@ -74,3 +74,9 @@ def userProfile(request, pk):
     context = {'profile': profile, 'topSkills': topSkills,
                'otherSkills': otherSkills}
     return render(request, 'users/user-profile.html', context)
+
+
+def userAccount(request):
+    
+    context = {}
+    return render(request, 'users/account.html', context)
