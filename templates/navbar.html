@@ -3,7 +3,14 @@
 <!-- Header Section -->
 <header class="header">
   <div class="container container--narrow">
+    {% if request.user.is_authenticated %}
     <a href="{% url 'account' %}"><img class="avatar avatar--md" src="{{ request.user.profile.profile_image.url }}" alt="image" /></a>
+    {% else %}
+    <a href="/" class="header__logo">
+      <img src="{% static 'images\logo.svg' %}" alt="DevSearch Logo" />
+    </a>
+    <nav class="header__nav">
+    {% endif %}
     <a href="{% url 'profiles' %}" class="header__logo">
       
     </a>

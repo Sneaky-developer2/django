@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Project
-from .forms import ProjectForm
 
+
+from .models import Project, Tag
+from .forms import ProjectForm
+from .utils import searchProjects, paginatProjects  
 
 def projects(request):
-    projects = Project.objects.all()
-    context = {'projects': projects}
+    projects, search_query = searchProjects(request)
+    custom_range, projects = paginatProjects(request, projects, 2)
+
+    context = {'projects': projects, 'search_query':search_query, 'custom_range':custom_range }
     return render(request, 'projects\projects.html', context)
 
 
@@ -27,7 +31,7 @@ def createProject(request):
             project = form.save(commit=False)
             project.owner = profile
             project.save()
-            return redirect('projects')
+            return redirect('account')
     context = {'form': form}
     return render(request, "projects/project_form.html", context)
 
@@ -50,9 +54,9 @@ def updateProject(request, pk):
 @login_required(login_url="login")
 def deleteProject(request, pk):
     profile = request.user.profile
-    profile = profile.project_set.get(id=pk)
+    project = profile.project_set.get(id=pk)
     if request.method == 'POST':
         project.delete()
         return redirect('projects')
     context = {'object': project}
-    return render(request, 'projects/delete_template.html', context)
+    return render(request, 'delete_template.html', context)
