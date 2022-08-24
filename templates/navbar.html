@@ -3,7 +3,7 @@
 <!-- Header Section -->
 <header class="header">
   <div class="container container--narrow">
-    <a href="{% url 'profiles' %}profile/{{ request.user.profile.id }}"><img class="avatar avatar--md" src="{{ request.user.profile.profile_image.url }}" alt="image" /></a>
+    <a href="{% url 'account' %}"><img class="avatar avatar--md" src="{{ request.user.profile.profile_image.url }}" alt="image" /></a>
     <a href="{% url 'profiles' %}" class="header__logo">
       
     </a>
