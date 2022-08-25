@@ -9,7 +9,7 @@ from .utils import searchProjects, paginatProjects
 
 def projects(request):
     projects, search_query = searchProjects(request)
-    custom_range, projects = paginatProjects(request, projects, 2)
+    custom_range, projects = paginatProjects(request, projects, 6)
 
     context = {'projects': projects, 'search_query': search_query,
                'custom_range': custom_range}
@@ -29,8 +29,9 @@ def project(request, pk):
 
         # update project vote count
         messages.success(request, 'Your review was successfully submitted!!')
+        return redirect('project', pk=projectObj.id)
 
-    return render(request, 'projects\single-projects.html', {'project': projectObj})
+    return render(request, 'projects\single-projects.html', {'project': projectObj, 'form': form})
 
 
 @login_required(login_url="login")

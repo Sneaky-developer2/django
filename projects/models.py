@@ -27,6 +27,14 @@ class Project(models.Model):
     class Meta:
         ordering = ['-created']
 
+    @property
+    def getVoteCount(self):
+        reviews = self.review_set.all()
+        upVotes = reviews.filter(value='up')
+        totalVotes = reviews.count()
+
+        ratio = (upVotes / totalVotes) * 100
+
 
 ###############################################################################################################
 
