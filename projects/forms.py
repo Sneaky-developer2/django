@@ -27,18 +27,18 @@ class ProjectForm(ModelForm):
         #  {'class': 'input', 'placeholder': 'Add a description'})
 
 
-# class ReviewForm(ModelForm):
-#     class Meta:
-#         moodel = Review
-#         fields = ['value', 'body']
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ['value', 'body']
 
-#         labels = {
-#             'value': 'Place your vote',
-#             'body': 'Add a comment'
-#         }
+        labels = {
+            'value': 'Place your vote',
+            'body': 'Add a comment'
+        }
 
-#     def __init__(self, *args, **kwargs):
-#         super(ReviewForm, self).__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super(ReviewForm, self).__init__(*args, **kwargs)
 
-#         for name, field in self.fields.items():
-#             field.widget.attrs.update({'class': 'input'})
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class': 'input'})
