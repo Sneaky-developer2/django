@@ -42,7 +42,7 @@
         {{project.vote_ratio}}% Postitive Feedback ({{project.vote_total}}
         Vote{{project.vote_total|pluralize:"s"}})
       </h5>
-
+      {% if request.user.profile.id in project.reviewers  %}
       <form class="form" action="{% url 'project' project.id %}" method="POST">
         {% csrf_token %}
         {% for field in form %}
@@ -53,7 +53,7 @@
         {% endfor %}
         <input class="btn btn--sub btn--lg" type="submit" value="Comments" />
       </form>
-
+      {% endif %}
 
       <div class="commentList">
         {% for review in project.review_set.all %}
