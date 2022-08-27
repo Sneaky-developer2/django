@@ -16,4 +16,7 @@ urlpatterns = [
     path('projects/<str:pk>/vote/', views.projectVote),
 
 
+    path('remove-tag/', views.removeTag)
+
+
 ]
