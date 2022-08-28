@@ -3,6 +3,7 @@ here's my first django project ;)
 
 
 
+inbox page:
 
 ![Web capture_28-8-2022_102344_127 0 0 1](https://user-images.githubusercontent.com/111292790/187087271-10cb1616-68fa-417d-a08b-11736c2a78dc.jpeg)
 
