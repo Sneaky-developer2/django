@@ -1,4 +1,9 @@
-here's my first django project
+here's my first django project ;)
+
+
+
+
+
 ![Web capture_28-8-2022_102344_127 0 0 1](https://user-images.githubusercontent.com/111292790/187087271-10cb1616-68fa-417d-a08b-11736c2a78dc.jpeg)
 ![Web capture_28-8-2022_102426_127 0 0 1](https://user-images.githubusercontent.com/111292790/187087266-8a112880-56a6-4cb4-a9c9-c2995499e708.jpeg)![Web capture_28-8-2022_102332_127 0 0 1](https://user-images.githubusercontent.com/111292790/187087273-d438f953-bdcc-4a35-a7cd-45dd4fdb5236.jpeg)
 
